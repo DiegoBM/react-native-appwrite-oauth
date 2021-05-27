@@ -11,7 +11,7 @@ npm install react-native-appwrite-oauth
 React native Appwrite OAuth depends on the libraries [`appwrite`](https://github.com/appwrite/sdk-for-web), [`react-native-webview`](https://github.com/react-native-webview/react-native-webview) and [`@react-native-cookies/cookies`](https://github.com/react-native-cookies/cookies). These dependencies are marked as peer dependencies, and need to be fullfilled before using the component. If you were **already using them** in your project, then you are good to go, otherwise please run:
 
 ```sh
-npm install appwrite, react-native-webview, @react-native-cookies/cookies
+npm install appwrite react-native-webview @react-native-cookies/cookies
 ```
 
 ## Basic Usage
@@ -32,7 +32,7 @@ sdk.setEndpoint(ENDPOINT).setProject(PROJECT);
 const YourOAuthSigninComponent = () => {
   const [authenticating, setAuthenticating] = useState(false);
 
-  const handleSuccess = () {
+  const handleSuccess = () => {
     // End OAuth sign in and close the modal
     setAuthenticating(false);
     // OAuth Sign in successful.
@@ -159,7 +159,7 @@ yarn example ios
 
 - This component has been tested with `Facebook` and `Github` providers only, but it should work the same with all the other providers supported by Appwrite. Technically the same flow should apply to any other providers unless otherwise specified by the Appwrite team. If you experience any issues with any other provider, please check the logs on your Appwrite installation and see if it reveals important information.
 
-- If you use the standard Appwrite development installation that includes an untrusted **SSL certificate**, the WebView will fail to navigate to your Appwrite server under https, and unfortunately many OAuth providers such as `Facebook` will require the requests to come from/to https domains. So far the only way that I have found to overcome this problem during development, is to disable the native Ssl handling. For `Android` this would entail modifying the file `node_modules\react-native-webview\android\src\main\java\com\reactnativecommunity\webview\RNCWebViewManager.java` by commenting the entire code of the `onReceivedSslError` method, and replacing it with `handler.proceed();`, as described below. Since I can't test in `iOS` I don't know the steps to do the same there, but feel free to let me know and I will include them here. Also, if you know of a better way of dealing with this WebView issue, please let me know and I will include it here. Needless to say, this **will not** be necessary if your environment already has a trusted SSL certificate, or the OAuth provider that you need to use does not require requests coming from https endpoints.
+- If you use the standard Appwrite development installation that includes an untrusted **SSL certificate**, the WebView will fail to navigate to your Appwrite server under https, and unfortunately many OAuth providers such as `Facebook` will require the requests to come from/to https domains. So far the only way that I have found to overcome this problem during development, is to disable the native Ssl handling. For `Android` this would entail modifying the file `node_modules\react-native-webview\android\src\main\java\com\reactnativecommunity\webview\RNCWebViewManager.java` by commenting the entire code of the `onReceivedSslError` method, and replacing it with `handler.proceed();`, as shown below (you will need to rebuild your application after this change). Since I can't test in `iOS` I don't know the steps to do the same there, but feel free to let me know and I will include them here. Also, if you know of a better way of dealing with this WebView issue, please let me know and I will include it here. Needless to say, this **will not** be necessary if your environment already has a trusted SSL certificate, or the OAuth provider that you need to use does not require requests coming from https endpoints.
 
 ```java
 @Override
