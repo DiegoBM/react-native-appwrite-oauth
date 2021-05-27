@@ -8,6 +8,7 @@ const options = {
   env: process.env,
   stdio: 'inherit',
   encoding: 'utf-8',
+  shell: true,
 };
 
 let result;
