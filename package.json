@@ -1,6 +1,6 @@
 {
   "name": "react-native-appwrite-oauth",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "React Native component that implements the OAuth2 flow for the Appwrite BaaS. It's based on a Modal implementation",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
