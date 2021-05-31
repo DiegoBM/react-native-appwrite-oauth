@@ -3,6 +3,7 @@ import {
   Modal,
   View,
   Button,
+  Platform,
   StyleSheet,
   ActivityIndicator,
 } from 'react-native';
@@ -35,10 +36,10 @@ const DefaultLayout: React.FC<ModalLayoutProps> = ({
   };
 
   return (
-    <>
+    <View style={styles.container}>
       <Button title="Cancel" onPress={handleCancel} />
       <WebViewComponent />
-    </>
+    </View>
   );
 };
 
@@ -248,6 +249,10 @@ const AppwriteOauth: React.FC<AppwriteOauthProps> = ({
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: Platform.select({ ios: 30, android: 0 }),
+  },
   fill: {
     flex: 1,
     alignItems: 'stretch',
