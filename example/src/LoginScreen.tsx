@@ -30,30 +30,27 @@ const LoginScreen: React.FC = () => {
         sdk={sdk}
         onSuccess={handleSuccess}
         onFailure={handleFailure}
-      >
-        <View>
-          <View style={styles.button}>
-            <Button
-              title="Facebook Sign In"
-              onPress={() => {
-                setProvider('facebook');
-                setScopes([]);
-                setOauthAuthenticating(true);
-              }}
-            />
-          </View>
-          <View style={styles.button}>
-            <Button
-              title="Github Sign In"
-              onPress={() => {
-                setProvider('github');
-                setScopes(['user:email']);
-                setOauthAuthenticating(true);
-              }}
-            />
-          </View>
-        </View>
-      </AppwriteOauth>
+      />
+      <View style={styles.button}>
+        <Button
+          title="Facebook Sign In"
+          onPress={() => {
+            setProvider('facebook');
+            setScopes([]);
+            setOauthAuthenticating(true);
+          }}
+        />
+      </View>
+      <View style={styles.button}>
+        <Button
+          title="Github Sign In"
+          onPress={() => {
+            setProvider('github');
+            setScopes(['user:email']);
+            setOauthAuthenticating(true);
+          }}
+        />
+      </View>
     </View>
   );
 };
@@ -61,7 +58,6 @@ const LoginScreen: React.FC = () => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    alignItems: 'stretch',
   },
   button: {
     marginHorizontal: 10,

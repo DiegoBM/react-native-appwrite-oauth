@@ -1,11 +1,11 @@
 import React from 'react';
 import CookieManager from '@react-native-cookies/cookies';
-import { Text } from 'react-native';
+import { View } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { Appwrite } from 'appwrite';
 import { create, act, ReactTestRenderer } from 'react-test-renderer';
 
-import AppwriteOauth from '../index';
+import AppwriteOauth, { ModalLayoutProps } from '../index';
 
 let tree: ReactTestRenderer;
 let sdk: Appwrite;
@@ -30,7 +30,7 @@ test('Renders correctly.', async () => {
   expect(tree.toJSON()).toMatchSnapshot();
 });
 
-test('Renders the WebView once it starts authenticating.', () => {
+test('Renders the WebView and a loading wheel once it starts authenticating.', () => {
   act(() => {
     tree = create(
       <AppwriteOauth
@@ -49,6 +49,22 @@ test('Renders the WebView once it starts authenticating.', () => {
       <AppwriteOauth
         authenticating={true}
         provider="testprovider"
+        scopes={[]}
+        sdk={sdk}
+      />
+    );
+  });
+
+  expect(tree.toJSON()).toMatchSnapshot();
+});
+
+test('Allows to change the color of the loading wheel.', async () => {
+  act(() => {
+    tree = create(
+      <AppwriteOauth
+        authenticating={true}
+        provider="testprovider"
+        loadingColor="rgb(0, 0, 0)"
         scopes={[]}
         sdk={sdk}
       />
@@ -114,8 +130,14 @@ test('Re-renders upon a change in scopes reflecting the right scopes in the url.
   expect(tree.toJSON()).toMatchSnapshot();
 });
 
-test('Renders an user-defined header instead of the standard one if one is passed.', () => {
-  const Header = () => <Text>Test Header</Text>;
+test('Renders an user-defined layout instead of the standard one if one is passed.', () => {
+  const Layout: React.ComponentType<ModalLayoutProps> = ({
+    WebViewComponent,
+  }) => (
+    <View data-testId="test-webview">
+      <WebViewComponent />
+    </View>
+  );
 
   act(() => {
     tree = create(
@@ -124,7 +146,7 @@ test('Renders an user-defined header instead of the standard one if one is passe
         provider="facebook"
         scopes={[]}
         sdk={sdk}
-        header={Header}
+        modalLayout={Layout}
       />
     );
   });

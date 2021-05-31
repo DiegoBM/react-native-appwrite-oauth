@@ -1,5 +1,5 @@
 import 'react-native-gesture-handler';
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -11,10 +11,16 @@ const Stack = createStackNavigator();
 
 export default function App() {
   const [auth, setAuth] = useState(false);
-  const authContext = {
-    signIn: () => setAuth(true),
-    signOut: () => setAuth(false),
-  };
+  const authContext = useMemo(
+    // This prevents context from changing unnecessarily when auth changes
+    // therefore components that use this context won't re-render when
+    // the sign in state changes (if they are not meant to, of course)
+    () => ({
+      signIn: () => setAuth(true),
+      signOut: () => setAuth(false),
+    }),
+    [setAuth]
+  );
 
   return (
     <NavigationContainer>
