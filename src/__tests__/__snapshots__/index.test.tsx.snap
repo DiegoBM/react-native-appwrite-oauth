@@ -7,99 +7,108 @@ exports[`Allows to change the color of the loading wheel. 1`] = `
   visible={true}
 >
   <View
-    accessibilityRole="button"
-    accessibilityState={Object {}}
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "opacity": 1,
+        "flex": 1,
+        "marginTop": 30,
       }
     }
   >
     <View
+      accessibilityRole="button"
+      accessibilityState={Object {}}
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
-        Array [
-          Object {},
-        ]
+        Object {
+          "opacity": 1,
+        }
       }
     >
-      <Text
+      <View
         style={
           Array [
-            Object {
-              "color": "#007AFF",
-              "fontSize": 18,
-              "margin": 8,
-              "textAlign": "center",
-            },
+            Object {},
           ]
         }
       >
-        Cancel
-      </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#007AFF",
+                "fontSize": 18,
+                "margin": 8,
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          Cancel
+        </Text>
+      </View>
     </View>
-  </View>
-  <View
-    style={
-      Array [
-        Object {
-          "flex": 1,
-          "overflow": "hidden",
-        },
-        undefined,
-      ]
-    }
-  >
-    <RNCWebView
-      cacheEnabled={true}
-      injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
-      injectedJavaScriptForMainFrameOnly={true}
-      javaScriptEnabled={true}
-      messagingEnabled={false}
-      onContentProcessDidTerminate={[Function]}
-      onError={[Function]}
-      onHttpError={[Function]}
-      onLoadingError={[Function]}
-      onLoadingFinish={[Function]}
-      onLoadingProgress={[Function]}
-      onLoadingStart={[Function]}
-      onMessage={[Function]}
-      onShouldStartLoadWithRequest={[Function]}
-      source={
-        Object {
-          "uri": "https://localhost/v1/account/sessions/oauth2/testprovider?success=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Fsuccess&failure=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Ffailure&project=testproject",
-        }
-      }
+    <View
       style={
         Array [
           Object {
             "flex": 1,
             "overflow": "hidden",
           },
-          Object {
-            "backgroundColor": "#ffffff",
-          },
-          Array [
-            Object {
-              "alignItems": "stretch",
-              "flex": 1,
-              "margin": 0,
-              "padding": 0,
-            },
-            Object {},
-          ],
+          undefined,
         ]
       }
-      useSharedProcessPool={true}
-    />
+    >
+      <RNCWebView
+        cacheEnabled={true}
+        injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+        injectedJavaScriptForMainFrameOnly={true}
+        javaScriptEnabled={true}
+        messagingEnabled={false}
+        onContentProcessDidTerminate={[Function]}
+        onError={[Function]}
+        onHttpError={[Function]}
+        onLoadingError={[Function]}
+        onLoadingFinish={[Function]}
+        onLoadingProgress={[Function]}
+        onLoadingStart={[Function]}
+        onMessage={[Function]}
+        onShouldStartLoadWithRequest={[Function]}
+        source={
+          Object {
+            "uri": "https://localhost/v1/account/sessions/oauth2/testprovider?success=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Fsuccess&failure=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Ffailure&project=testproject",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#ffffff",
+            },
+            Array [
+              Object {
+                "alignItems": "stretch",
+                "flex": 1,
+                "margin": 0,
+                "padding": 0,
+              },
+              Object {},
+            ],
+          ]
+        }
+        useSharedProcessPool={true}
+      />
+    </View>
   </View>
   <View
     style={
@@ -131,99 +140,108 @@ exports[`Re-renders upon a change in provider reflecting the right provider in t
   visible={true}
 >
   <View
-    accessibilityRole="button"
-    accessibilityState={Object {}}
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "opacity": 1,
+        "flex": 1,
+        "marginTop": 30,
       }
     }
   >
     <View
+      accessibilityRole="button"
+      accessibilityState={Object {}}
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
-        Array [
-          Object {},
-        ]
+        Object {
+          "opacity": 1,
+        }
       }
     >
-      <Text
+      <View
         style={
           Array [
-            Object {
-              "color": "#007AFF",
-              "fontSize": 18,
-              "margin": 8,
-              "textAlign": "center",
-            },
+            Object {},
           ]
         }
       >
-        Cancel
-      </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#007AFF",
+                "fontSize": 18,
+                "margin": 8,
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          Cancel
+        </Text>
+      </View>
     </View>
-  </View>
-  <View
-    style={
-      Array [
-        Object {
-          "flex": 1,
-          "overflow": "hidden",
-        },
-        undefined,
-      ]
-    }
-  >
-    <RNCWebView
-      cacheEnabled={true}
-      injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
-      injectedJavaScriptForMainFrameOnly={true}
-      javaScriptEnabled={true}
-      messagingEnabled={false}
-      onContentProcessDidTerminate={[Function]}
-      onError={[Function]}
-      onHttpError={[Function]}
-      onLoadingError={[Function]}
-      onLoadingFinish={[Function]}
-      onLoadingProgress={[Function]}
-      onLoadingStart={[Function]}
-      onMessage={[Function]}
-      onShouldStartLoadWithRequest={[Function]}
-      source={
-        Object {
-          "uri": "https://localhost/v1/account/sessions/oauth2/facebook?success=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Fsuccess&failure=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Ffailure&project=testproject",
-        }
-      }
+    <View
       style={
         Array [
           Object {
             "flex": 1,
             "overflow": "hidden",
           },
-          Object {
-            "backgroundColor": "#ffffff",
-          },
-          Array [
-            Object {
-              "alignItems": "stretch",
-              "flex": 1,
-              "margin": 0,
-              "padding": 0,
-            },
-            Object {},
-          ],
+          undefined,
         ]
       }
-      useSharedProcessPool={true}
-    />
+    >
+      <RNCWebView
+        cacheEnabled={true}
+        injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+        injectedJavaScriptForMainFrameOnly={true}
+        javaScriptEnabled={true}
+        messagingEnabled={false}
+        onContentProcessDidTerminate={[Function]}
+        onError={[Function]}
+        onHttpError={[Function]}
+        onLoadingError={[Function]}
+        onLoadingFinish={[Function]}
+        onLoadingProgress={[Function]}
+        onLoadingStart={[Function]}
+        onMessage={[Function]}
+        onShouldStartLoadWithRequest={[Function]}
+        source={
+          Object {
+            "uri": "https://localhost/v1/account/sessions/oauth2/facebook?success=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Fsuccess&failure=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Ffailure&project=testproject",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#ffffff",
+            },
+            Array [
+              Object {
+                "alignItems": "stretch",
+                "flex": 1,
+                "margin": 0,
+                "padding": 0,
+              },
+              Object {},
+            ],
+          ]
+        }
+        useSharedProcessPool={true}
+      />
+    </View>
   </View>
   <View
     style={
@@ -255,99 +273,108 @@ exports[`Re-renders upon a change in provider reflecting the right provider in t
   visible={true}
 >
   <View
-    accessibilityRole="button"
-    accessibilityState={Object {}}
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "opacity": 1,
+        "flex": 1,
+        "marginTop": 30,
       }
     }
   >
     <View
+      accessibilityRole="button"
+      accessibilityState={Object {}}
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
-        Array [
-          Object {},
-        ]
+        Object {
+          "opacity": 1,
+        }
       }
     >
-      <Text
+      <View
         style={
           Array [
-            Object {
-              "color": "#007AFF",
-              "fontSize": 18,
-              "margin": 8,
-              "textAlign": "center",
-            },
+            Object {},
           ]
         }
       >
-        Cancel
-      </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#007AFF",
+                "fontSize": 18,
+                "margin": 8,
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          Cancel
+        </Text>
+      </View>
     </View>
-  </View>
-  <View
-    style={
-      Array [
-        Object {
-          "flex": 1,
-          "overflow": "hidden",
-        },
-        undefined,
-      ]
-    }
-  >
-    <RNCWebView
-      cacheEnabled={true}
-      injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
-      injectedJavaScriptForMainFrameOnly={true}
-      javaScriptEnabled={true}
-      messagingEnabled={false}
-      onContentProcessDidTerminate={[Function]}
-      onError={[Function]}
-      onHttpError={[Function]}
-      onLoadingError={[Function]}
-      onLoadingFinish={[Function]}
-      onLoadingProgress={[Function]}
-      onLoadingStart={[Function]}
-      onMessage={[Function]}
-      onShouldStartLoadWithRequest={[Function]}
-      source={
-        Object {
-          "uri": "https://localhost/v1/account/sessions/oauth2/github?success=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Fsuccess&failure=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Ffailure&project=testproject",
-        }
-      }
+    <View
       style={
         Array [
           Object {
             "flex": 1,
             "overflow": "hidden",
           },
-          Object {
-            "backgroundColor": "#ffffff",
-          },
-          Array [
-            Object {
-              "alignItems": "stretch",
-              "flex": 1,
-              "margin": 0,
-              "padding": 0,
-            },
-            Object {},
-          ],
+          undefined,
         ]
       }
-      useSharedProcessPool={true}
-    />
+    >
+      <RNCWebView
+        cacheEnabled={true}
+        injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+        injectedJavaScriptForMainFrameOnly={true}
+        javaScriptEnabled={true}
+        messagingEnabled={false}
+        onContentProcessDidTerminate={[Function]}
+        onError={[Function]}
+        onHttpError={[Function]}
+        onLoadingError={[Function]}
+        onLoadingFinish={[Function]}
+        onLoadingProgress={[Function]}
+        onLoadingStart={[Function]}
+        onMessage={[Function]}
+        onShouldStartLoadWithRequest={[Function]}
+        source={
+          Object {
+            "uri": "https://localhost/v1/account/sessions/oauth2/github?success=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Fsuccess&failure=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Ffailure&project=testproject",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#ffffff",
+            },
+            Array [
+              Object {
+                "alignItems": "stretch",
+                "flex": 1,
+                "margin": 0,
+                "padding": 0,
+              },
+              Object {},
+            ],
+          ]
+        }
+        useSharedProcessPool={true}
+      />
+    </View>
   </View>
   <View
     style={
@@ -379,99 +406,108 @@ exports[`Re-renders upon a change in scopes reflecting the right scopes in the u
   visible={true}
 >
   <View
-    accessibilityRole="button"
-    accessibilityState={Object {}}
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "opacity": 1,
+        "flex": 1,
+        "marginTop": 30,
       }
     }
   >
     <View
+      accessibilityRole="button"
+      accessibilityState={Object {}}
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
-        Array [
-          Object {},
-        ]
+        Object {
+          "opacity": 1,
+        }
       }
     >
-      <Text
+      <View
         style={
           Array [
-            Object {
-              "color": "#007AFF",
-              "fontSize": 18,
-              "margin": 8,
-              "textAlign": "center",
-            },
+            Object {},
           ]
         }
       >
-        Cancel
-      </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#007AFF",
+                "fontSize": 18,
+                "margin": 8,
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          Cancel
+        </Text>
+      </View>
     </View>
-  </View>
-  <View
-    style={
-      Array [
-        Object {
-          "flex": 1,
-          "overflow": "hidden",
-        },
-        undefined,
-      ]
-    }
-  >
-    <RNCWebView
-      cacheEnabled={true}
-      injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
-      injectedJavaScriptForMainFrameOnly={true}
-      javaScriptEnabled={true}
-      messagingEnabled={false}
-      onContentProcessDidTerminate={[Function]}
-      onError={[Function]}
-      onHttpError={[Function]}
-      onLoadingError={[Function]}
-      onLoadingFinish={[Function]}
-      onLoadingProgress={[Function]}
-      onLoadingStart={[Function]}
-      onMessage={[Function]}
-      onShouldStartLoadWithRequest={[Function]}
-      source={
-        Object {
-          "uri": "https://localhost/v1/account/sessions/oauth2/facebook?success=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Fsuccess&failure=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Ffailure&project=testproject",
-        }
-      }
+    <View
       style={
         Array [
           Object {
             "flex": 1,
             "overflow": "hidden",
           },
-          Object {
-            "backgroundColor": "#ffffff",
-          },
-          Array [
-            Object {
-              "alignItems": "stretch",
-              "flex": 1,
-              "margin": 0,
-              "padding": 0,
-            },
-            Object {},
-          ],
+          undefined,
         ]
       }
-      useSharedProcessPool={true}
-    />
+    >
+      <RNCWebView
+        cacheEnabled={true}
+        injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+        injectedJavaScriptForMainFrameOnly={true}
+        javaScriptEnabled={true}
+        messagingEnabled={false}
+        onContentProcessDidTerminate={[Function]}
+        onError={[Function]}
+        onHttpError={[Function]}
+        onLoadingError={[Function]}
+        onLoadingFinish={[Function]}
+        onLoadingProgress={[Function]}
+        onLoadingStart={[Function]}
+        onMessage={[Function]}
+        onShouldStartLoadWithRequest={[Function]}
+        source={
+          Object {
+            "uri": "https://localhost/v1/account/sessions/oauth2/facebook?success=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Fsuccess&failure=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Ffailure&project=testproject",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#ffffff",
+            },
+            Array [
+              Object {
+                "alignItems": "stretch",
+                "flex": 1,
+                "margin": 0,
+                "padding": 0,
+              },
+              Object {},
+            ],
+          ]
+        }
+        useSharedProcessPool={true}
+      />
+    </View>
   </View>
   <View
     style={
@@ -503,99 +539,108 @@ exports[`Re-renders upon a change in scopes reflecting the right scopes in the u
   visible={true}
 >
   <View
-    accessibilityRole="button"
-    accessibilityState={Object {}}
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "opacity": 1,
+        "flex": 1,
+        "marginTop": 30,
       }
     }
   >
     <View
+      accessibilityRole="button"
+      accessibilityState={Object {}}
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
-        Array [
-          Object {},
-        ]
+        Object {
+          "opacity": 1,
+        }
       }
     >
-      <Text
+      <View
         style={
           Array [
-            Object {
-              "color": "#007AFF",
-              "fontSize": 18,
-              "margin": 8,
-              "textAlign": "center",
-            },
+            Object {},
           ]
         }
       >
-        Cancel
-      </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#007AFF",
+                "fontSize": 18,
+                "margin": 8,
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          Cancel
+        </Text>
+      </View>
     </View>
-  </View>
-  <View
-    style={
-      Array [
-        Object {
-          "flex": 1,
-          "overflow": "hidden",
-        },
-        undefined,
-      ]
-    }
-  >
-    <RNCWebView
-      cacheEnabled={true}
-      injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
-      injectedJavaScriptForMainFrameOnly={true}
-      javaScriptEnabled={true}
-      messagingEnabled={false}
-      onContentProcessDidTerminate={[Function]}
-      onError={[Function]}
-      onHttpError={[Function]}
-      onLoadingError={[Function]}
-      onLoadingFinish={[Function]}
-      onLoadingProgress={[Function]}
-      onLoadingStart={[Function]}
-      onMessage={[Function]}
-      onShouldStartLoadWithRequest={[Function]}
-      source={
-        Object {
-          "uri": "https://localhost/v1/account/sessions/oauth2/github?success=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Fsuccess&failure=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Ffailure&scopes%5B0%5D=user%3Aemail&project=testproject",
-        }
-      }
+    <View
       style={
         Array [
           Object {
             "flex": 1,
             "overflow": "hidden",
           },
-          Object {
-            "backgroundColor": "#ffffff",
-          },
-          Array [
-            Object {
-              "alignItems": "stretch",
-              "flex": 1,
-              "margin": 0,
-              "padding": 0,
-            },
-            Object {},
-          ],
+          undefined,
         ]
       }
-      useSharedProcessPool={true}
-    />
+    >
+      <RNCWebView
+        cacheEnabled={true}
+        injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+        injectedJavaScriptForMainFrameOnly={true}
+        javaScriptEnabled={true}
+        messagingEnabled={false}
+        onContentProcessDidTerminate={[Function]}
+        onError={[Function]}
+        onHttpError={[Function]}
+        onLoadingError={[Function]}
+        onLoadingFinish={[Function]}
+        onLoadingProgress={[Function]}
+        onLoadingStart={[Function]}
+        onMessage={[Function]}
+        onShouldStartLoadWithRequest={[Function]}
+        source={
+          Object {
+            "uri": "https://localhost/v1/account/sessions/oauth2/github?success=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Fsuccess&failure=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Ffailure&scopes%5B0%5D=user%3Aemail&project=testproject",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#ffffff",
+            },
+            Array [
+              Object {
+                "alignItems": "stretch",
+                "flex": 1,
+                "margin": 0,
+                "padding": 0,
+              },
+              Object {},
+            ],
+          ]
+        }
+        useSharedProcessPool={true}
+      />
+    </View>
   </View>
   <View
     style={
@@ -714,44 +759,53 @@ exports[`Renders correctly. 1`] = `
   visible={false}
 >
   <View
-    accessibilityRole="button"
-    accessibilityState={Object {}}
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "opacity": 1,
+        "flex": 1,
+        "marginTop": 30,
       }
     }
   >
     <View
+      accessibilityRole="button"
+      accessibilityState={Object {}}
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
-        Array [
-          Object {},
-        ]
+        Object {
+          "opacity": 1,
+        }
       }
     >
-      <Text
+      <View
         style={
           Array [
-            Object {
-              "color": "#007AFF",
-              "fontSize": 18,
-              "margin": 8,
-              "textAlign": "center",
-            },
+            Object {},
           ]
         }
       >
-        Cancel
-      </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#007AFF",
+                "fontSize": 18,
+                "margin": 8,
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          Cancel
+        </Text>
+      </View>
     </View>
   </View>
 </Modal>
@@ -764,44 +818,53 @@ exports[`Renders the WebView and a loading wheel once it starts authenticating. 
   visible={false}
 >
   <View
-    accessibilityRole="button"
-    accessibilityState={Object {}}
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "opacity": 1,
+        "flex": 1,
+        "marginTop": 30,
       }
     }
   >
     <View
+      accessibilityRole="button"
+      accessibilityState={Object {}}
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
-        Array [
-          Object {},
-        ]
+        Object {
+          "opacity": 1,
+        }
       }
     >
-      <Text
+      <View
         style={
           Array [
-            Object {
-              "color": "#007AFF",
-              "fontSize": 18,
-              "margin": 8,
-              "textAlign": "center",
-            },
+            Object {},
           ]
         }
       >
-        Cancel
-      </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#007AFF",
+                "fontSize": 18,
+                "margin": 8,
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          Cancel
+        </Text>
+      </View>
     </View>
   </View>
 </Modal>
@@ -814,99 +877,108 @@ exports[`Renders the WebView and a loading wheel once it starts authenticating. 
   visible={true}
 >
   <View
-    accessibilityRole="button"
-    accessibilityState={Object {}}
-    accessible={true}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "opacity": 1,
+        "flex": 1,
+        "marginTop": 30,
       }
     }
   >
     <View
+      accessibilityRole="button"
+      accessibilityState={Object {}}
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
-        Array [
-          Object {},
-        ]
+        Object {
+          "opacity": 1,
+        }
       }
     >
-      <Text
+      <View
         style={
           Array [
-            Object {
-              "color": "#007AFF",
-              "fontSize": 18,
-              "margin": 8,
-              "textAlign": "center",
-            },
+            Object {},
           ]
         }
       >
-        Cancel
-      </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#007AFF",
+                "fontSize": 18,
+                "margin": 8,
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          Cancel
+        </Text>
+      </View>
     </View>
-  </View>
-  <View
-    style={
-      Array [
-        Object {
-          "flex": 1,
-          "overflow": "hidden",
-        },
-        undefined,
-      ]
-    }
-  >
-    <RNCWebView
-      cacheEnabled={true}
-      injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
-      injectedJavaScriptForMainFrameOnly={true}
-      javaScriptEnabled={true}
-      messagingEnabled={false}
-      onContentProcessDidTerminate={[Function]}
-      onError={[Function]}
-      onHttpError={[Function]}
-      onLoadingError={[Function]}
-      onLoadingFinish={[Function]}
-      onLoadingProgress={[Function]}
-      onLoadingStart={[Function]}
-      onMessage={[Function]}
-      onShouldStartLoadWithRequest={[Function]}
-      source={
-        Object {
-          "uri": "https://localhost/v1/account/sessions/oauth2/testprovider?success=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Fsuccess&failure=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Ffailure&project=testproject",
-        }
-      }
+    <View
       style={
         Array [
           Object {
             "flex": 1,
             "overflow": "hidden",
           },
-          Object {
-            "backgroundColor": "#ffffff",
-          },
-          Array [
-            Object {
-              "alignItems": "stretch",
-              "flex": 1,
-              "margin": 0,
-              "padding": 0,
-            },
-            Object {},
-          ],
+          undefined,
         ]
       }
-      useSharedProcessPool={true}
-    />
+    >
+      <RNCWebView
+        cacheEnabled={true}
+        injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+        injectedJavaScriptForMainFrameOnly={true}
+        javaScriptEnabled={true}
+        messagingEnabled={false}
+        onContentProcessDidTerminate={[Function]}
+        onError={[Function]}
+        onHttpError={[Function]}
+        onLoadingError={[Function]}
+        onLoadingFinish={[Function]}
+        onLoadingProgress={[Function]}
+        onLoadingStart={[Function]}
+        onMessage={[Function]}
+        onShouldStartLoadWithRequest={[Function]}
+        source={
+          Object {
+            "uri": "https://localhost/v1/account/sessions/oauth2/testprovider?success=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Fsuccess&failure=http%3A%2F%2Flocalhost%2Fauth%2Foauth2%2Ffailure&project=testproject",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#ffffff",
+            },
+            Array [
+              Object {
+                "alignItems": "stretch",
+                "flex": 1,
+                "margin": 0,
+                "padding": 0,
+              },
+              Object {},
+            ],
+          ]
+        }
+        useSharedProcessPool={true}
+      />
+    </View>
   </View>
   <View
     style={
