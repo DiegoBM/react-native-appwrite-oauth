@@ -189,8 +189,6 @@ public void onReceivedSslError(final WebView webView, final SslErrorHandler hand
 
 - For the same reason, if you find that the OAuth process completes successfully using https in the Appwrite SDK configuration, but your subsequent requests to the SDK fail to execute, it's likely because the requests are being rejected due to the untrusted certificate. The only way that I have found to solve this during development using the default untrusted certificate, is to complete the OAuth process using https so that the OAuth providers don't complain, and then switch to http for all subsequent requests to Appwrite server, as described below. Again, this **will not** happen if your environment is already using a trusted certificate, or the OAuth provider that you need to use does not require requests coming from https endpoints. If you know of a better way of dealing with this, please let me know and I will include it here.
 
-- If you sign in with one provider like _Facebook_, and afterwards you sign in with let's say _Github_, and both accounts share the same email, you'll notice that you'll be getting the account information that was added when you signed up with the first provider. This is **`Appwrite's`** specific implementation. If you reverse the order of the providers that you use to sign up for the first time, you'll see that you'll allways get the account information of the account that you used first. My best guess is that accounts are created using the email as a primary key, and if that email already exists, it will use that account information and move on, so please bear this in mind.
-
 ```js
 // Init your Web SDK with https and complete the OAuth sign in
 const sdk = new Appwrite();
@@ -203,6 +201,8 @@ sdk.setEndpoint('https://localhost/v1').setProject('123456789');
 sdk.setEndpoint(`http://localhost/v1`);
 const accountData = await sdk.account.get();
 ```
+
+- If you sign in with one provider like _Facebook_, and afterwards you sign in with let's say _Github_, and both accounts share the same email, you'll notice that you'll be getting the account information that was added when you signed up with the first provider. This is **`Appwrite's`** specific implementation. If you reverse the order of the providers that you use to sign up for the first time, you'll see that you'll allways get the account information of the account that you used first. My best guess is that accounts are created using the email as a primary key, and if that email already exists, it will use that account information and move on, so please bear this in mind.
 
 ## Contributing
 
