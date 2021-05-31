@@ -125,12 +125,6 @@ const sdk = new Appwrite();
 sdk.setEndpoint('http://localhost/v1').setProject('123456789');
 ```
 
-For iOS devices you'll need to link the relevant CocoaPods. From the `example/ios` directory run:
-
-```sh
-pod install
-```
-
 Finally run the code in your desired platform, using one of the following commands:
 
 To run the example app on Android:
