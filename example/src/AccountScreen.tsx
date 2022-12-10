@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { StyleSheet, View, Text, Button, Alert } from 'react-native';
+import React, {useState, useEffect, useContext} from 'react';
+import {StyleSheet, View, Text, Button, Alert} from 'react-native';
 
-import sdk from './sdk';
+import appwriteAccount from './sdk';
 import AuthContext from './AuthContext';
 
 const defaultMessage = 'No account data to show';
@@ -13,10 +13,10 @@ const AccountScreen: React.FC = () => {
   useEffect(() => {
     const getAccount = async () => {
       try {
-        const accountData = await sdk.account.get();
+        const accountData = await appwriteAccount.get();
         setAccount(accountData);
       } catch (error) {
-        Alert.alert('Error Retrieving Account', error.message);
+        Alert.alert('Error Retrieving Account', (error as Error).message);
       }
     };
 
@@ -25,10 +25,10 @@ const AccountScreen: React.FC = () => {
 
   const handleLogout = async () => {
     try {
-      await sdk.account.deleteSession('current');
+      await appwriteAccount.deleteSession('current');
       authContext.signOut();
     } catch (error) {
-      Alert.alert('Error Signing Out', error.message);
+      Alert.alert('Error Signing Out', (error as Error).message);
     }
   };
 
@@ -56,9 +56,11 @@ const styles = StyleSheet.create({
     borderBottomColor: 'black',
     borderBottomWidth: 2,
     marginBottom: 20,
+    color: 'black',
   },
   account: {
     marginBottom: 20,
+    color: 'black',
   },
 });
 

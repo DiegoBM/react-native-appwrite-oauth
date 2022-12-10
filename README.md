@@ -24,8 +24,12 @@ import AppwriteOauth from 'react-native-appwrite-oauth';
 // ...
 
 // Init your Web SDK
-const sdk = new Appwrite();
-sdk.setEndpoint(ENDPOINT).setProject(PROJECT);
+import {Client, Account} from 'appwrite';
+
+const client = new Client();
+const account = new Account(client);
+
+client.setEndpoint(ENDPOINT).setProject(PROJECT);
 
 // ...
 
@@ -48,7 +52,7 @@ const YourOAuthSigninComponent = () => {
   return (
     <View>
       <AppwriteOauth
-        sdk={sdk}
+        account={account}
         authenticating={authenticating}
         provider="facebook"
         onSuccess={handleSuccess}
@@ -92,7 +96,7 @@ const MyLayout = ({ WebViewComponent }) => (
 return (
   <View>
     <AppwriteOauth
-      sdk={sdk}
+      account={account}
       authenticating={authenticating}
       provider="github"
       scopes={['user:email']}
@@ -120,9 +124,11 @@ yarn
 Then open the `example/src/sdk.ts` file, and provide the values for `setEndpoint` and `setProject`, pointing to your respective Appwrite API server and project.
 
 ```js
-const sdk = new Appwrite();
+const client = new Client();
+const account = new Account(client);
+
 // Fill with your Appwrite API endpoint and Project ID!
-sdk.setEndpoint('http://localhost/v1').setProject('123456789');
+client.setEndpoint('http://localhost/v1').setProject('123456789');
 ```
 
 Finally run the code in your desired platform, using one of the following commands:
@@ -141,7 +147,7 @@ yarn example ios
 
 ## Props
 
-- **`sdk`** _(Appwrite - **Mandatory**)_ - Appwrite SDK instance, which needs to be properly configured before using the component.
+- **`account`** _(Account - **Mandatory**)_ - Appwrite's Account instance, which needs to be properly configured before using the component.
 
 - **`authenticating`** _(Boolean - **Mandatory**)_ - Once you set this property to true, the modal will be displayed and the OAuth process will begin. Please bear in mind that the modal will keep being displayed until you set this property back to false. A normal flow will set this property back to false upon `success` or `failure`, but you are free to implement the flow that best suits your application.
 
@@ -191,15 +197,17 @@ public void onReceivedSslError(final WebView webView, final SslErrorHandler hand
 
 ```js
 // Init your Web SDK with https and complete the OAuth sign in
-const sdk = new Appwrite();
-sdk.setEndpoint('https://localhost/v1').setProject('123456789');
+const client = new Client();
+const account = new Account(client);
+
+client.setEndpoint('https://localhost/v1').setProject('123456789');
 
 // ...
 
 // Once the OAuth Sign in has completed successfully,
 // switch to http and continue using the SDK
-sdk.setEndpoint(`http://localhost/v1`);
-const accountData = await sdk.account.get();
+client.setEndpoint(`http://localhost/v1`);
+const accountData = await account.get();
 ```
 
 - If you sign in with one provider like _Facebook_, and afterwards you sign in with let's say _Github_, and both accounts share the same email, you'll notice that you'll be getting the account information that was added when you signed up with the first provider. This is **`Appwrite's`** specific implementation. If you reverse the order of the providers that you use to sign up for the first time, you'll see that you'll allways get the account information of the account that you used first. My best guess is that accounts are created using the email as a primary key, and if that email already exists, it will use that account information and move on, so please bear this in mind.

@@ -10,7 +10,7 @@ import {
 import { WebView, WebViewProps } from 'react-native-webview';
 import CookieManager from '@react-native-cookies/cookies';
 
-import type { Appwrite } from 'appwrite';
+import type { Account } from 'appwrite';
 import type { WebViewErrorEvent } from 'react-native-webview/lib/WebViewTypes';
 
 type onSuccessCallback = () => void;
@@ -45,9 +45,9 @@ const DefaultLayout: React.FC<ModalLayoutProps> = ({
 
 export type AppwriteOauthProps = {
   /**
-   * Appwrite SDK instance
+   * Appwrite Account instance
    */
-  sdk: Appwrite;
+  account: Account;
 
   /**
    * Initiates the authentication process
@@ -102,10 +102,10 @@ export type AppwriteOauthProps = {
 
 const successUrl = 'http://localhost/auth/oauth2/success';
 const failureUrl = 'http://localhost/auth/oauth2/failure';
-const regex = /http:\/\/localhost(.*)?.+key=(?<key>.+)?&secret=(?<secret>.+)/;
+const regex = /http:\/\/localhost(.*)?.+key=(.+)?&secret=(.+)/;
 
 const AppwriteOauth: React.FC<AppwriteOauthProps> = ({
-  sdk,
+  account,
   authenticating = false,
   provider = '',
   scopes = [],
@@ -115,8 +115,8 @@ const AppwriteOauth: React.FC<AppwriteOauthProps> = ({
   onFailure = () => {},
   modalLayout,
 }) => {
-  if (!sdk) {
-    throw new Error('Missing or invalid Appwrite "sdk" prop');
+  if (!account) {
+    throw new Error('Missing or invalid Appwrite "account" prop');
   }
 
   if (!provider) {
@@ -128,16 +128,16 @@ const AppwriteOauth: React.FC<AppwriteOauthProps> = ({
 
   useEffect(() => {
     if (authenticating) {
-      const url = sdk.account.createOAuth2Session(
+      const url = account.createOAuth2Session(
         provider,
         successUrl,
         failureUrl,
         scopes
       );
-      setEndpoint(url.toString());
+      setEndpoint((url as URL).toString());
       setLoading(true);
     }
-  }, [authenticating, sdk, provider, scopes]);
+  }, [authenticating, account, provider, scopes]);
 
   // Intercept all requests before navigation happens in order to stop the
   // navigation to "localhost", which might not exist, and we don't need to
@@ -150,15 +150,18 @@ const AppwriteOauth: React.FC<AppwriteOauthProps> = ({
       }
 
       const urlDomain = request.url.split('/').slice(0, 3).join('/');
-      const sdkDomain = sdk.config.endpoint.split('/').slice(0, 3).join('/');
+      const sdkDomain = account.client.config.endpoint
+        .split('/')
+        .slice(0, 3)
+        .join('/');
 
       // If we get into one of our urls, indicate loading, since we are redirecting
       // to another state where we will be doing something meaningful. Disable then.
       setLoading(urlDomain === sdkDomain || urlDomain === 'http://localhost');
 
       const result = (request.url as string).match(regex);
-      if (authenticating && result !== null && result.groups) {
-        const { key, secret } = result.groups;
+      if (authenticating && result !== null) {
+        const [, , key, secret] = result;
 
         // Ensures that HttpOnly is included in the cookie data
         let cookieString = !cookieData.toLowerCase().includes('httponly')
@@ -188,7 +191,7 @@ const AppwriteOauth: React.FC<AppwriteOauthProps> = ({
         return true;
       }
     },
-    [sdk, authenticating, setLoading, onSuccess, onFailure, cookieData]
+    [account, authenticating, setLoading, onSuccess, onFailure, cookieData]
   );
 
   const handleError = useCallback(

@@ -1,13 +1,12 @@
-import 'react-native-gesture-handler';
-import React, { useState, useMemo } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import React, {useState, useMemo} from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import LoginScreen from './LoginScreen';
 import AccountScreen from './AccountScreen';
 import AuthContext from './AuthContext';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [auth, setAuth] = useState(false);
@@ -19,7 +18,7 @@ export default function App() {
       signIn: () => setAuth(true),
       signOut: () => setAuth(false),
     }),
-    [setAuth]
+    [setAuth],
   );
 
   return (

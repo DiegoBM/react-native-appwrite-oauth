@@ -1,8 +1,8 @@
-import React, { useState, useContext } from 'react';
-import { StyleSheet, View, Button, Alert } from 'react-native';
+import React, {useState, useContext} from 'react';
+import {StyleSheet, View, Button, Alert} from 'react-native';
 import AppwriteOauth from 'react-native-appwrite-oauth';
 
-import sdk from './sdk';
+import appwriteAccount from './sdk';
 import AuthContext from './AuthContext';
 
 const LoginScreen: React.FC = () => {
@@ -27,7 +27,7 @@ const LoginScreen: React.FC = () => {
         authenticating={oauthAuthenticating}
         provider={provider}
         scopes={scopes}
-        sdk={sdk}
+        account={appwriteAccount}
         onSuccess={handleSuccess}
         onFailure={handleFailure}
       />

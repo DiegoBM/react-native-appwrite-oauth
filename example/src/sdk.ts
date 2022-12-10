@@ -1,7 +1,9 @@
-import { Appwrite } from 'appwrite';
+import {Client, Account} from 'appwrite';
 
-const sdk = new Appwrite();
+const client = new Client();
+const account = new Account(client);
+
 // Fill with your Appwrite API endpoint and Project ID!
-sdk.setEndpoint('').setProject('');
+client.setEndpoint('').setProject('');
 
-export default sdk;
+export default account;

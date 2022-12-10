@@ -2,17 +2,20 @@ import React from 'react';
 import CookieManager from '@react-native-cookies/cookies';
 import { View } from 'react-native';
 import { WebView } from 'react-native-webview';
-import { Appwrite } from 'appwrite';
+import { Client, Account } from 'appwrite';
 import { create, act, ReactTestRenderer } from 'react-test-renderer';
 
 import AppwriteOauth, { ModalLayoutProps } from '../index';
 
 let tree: ReactTestRenderer;
-let sdk: Appwrite;
+let client: Client;
+let account: Account;
 
 beforeAll(() => {
-  sdk = new Appwrite();
-  sdk.setEndpoint(`https://localhost/v1`).setProject('testproject');
+  client = new Client();
+  account = new Account(client);
+
+  client.setEndpoint(`https://localhost/v1`).setProject('testproject');
 });
 
 test('Renders correctly.', async () => {
@@ -22,7 +25,7 @@ test('Renders correctly.', async () => {
         authenticating={false}
         provider="testprovider"
         scopes={[]}
-        sdk={sdk}
+        account={account}
       />
     );
   });
@@ -37,7 +40,7 @@ test('Renders the WebView and a loading wheel once it starts authenticating.', (
         authenticating={false}
         provider="testprovider"
         scopes={[]}
-        sdk={sdk}
+        account={account}
       />
     );
   });
@@ -50,7 +53,7 @@ test('Renders the WebView and a loading wheel once it starts authenticating.', (
         authenticating={true}
         provider="testprovider"
         scopes={[]}
-        sdk={sdk}
+        account={account}
       />
     );
   });
@@ -66,7 +69,7 @@ test('Allows to change the color of the loading wheel.', async () => {
         provider="testprovider"
         loadingColor="rgb(0, 0, 0)"
         scopes={[]}
-        sdk={sdk}
+        account={account}
       />
     );
   });
@@ -81,7 +84,7 @@ test('Re-renders upon a change in provider reflecting the right provider in the 
         authenticating={true}
         provider="facebook"
         scopes={[]}
-        sdk={sdk}
+        account={account}
       />
     );
   });
@@ -94,7 +97,7 @@ test('Re-renders upon a change in provider reflecting the right provider in the 
         authenticating={true}
         provider="github"
         scopes={[]}
-        sdk={sdk}
+        account={account}
       />
     );
   });
@@ -109,7 +112,7 @@ test('Re-renders upon a change in scopes reflecting the right scopes in the url.
         authenticating={true}
         provider="facebook"
         scopes={[]}
-        sdk={sdk}
+        account={account}
       />
     );
   });
@@ -122,7 +125,7 @@ test('Re-renders upon a change in scopes reflecting the right scopes in the url.
         authenticating={true}
         provider="github"
         scopes={['user:email']}
-        sdk={sdk}
+        account={account}
       />
     );
   });
@@ -145,7 +148,7 @@ test('Renders an user-defined layout instead of the standard one if one is passe
         authenticating={true}
         provider="facebook"
         scopes={[]}
-        sdk={sdk}
+        account={account}
         modalLayout={Layout}
       />
     );
@@ -169,7 +172,7 @@ test('Accepts passing customised user-defined cookie data', async () => {
         authenticating={true}
         provider="facebook"
         scopes={[]}
-        sdk={sdk}
+        account={account}
         cookieData="Test;HttpOnly"
       />
     );
@@ -200,7 +203,7 @@ test('Includes HttpOnly in the user-defined cookie data, even if omitted', async
         authenticating={true}
         provider="facebook"
         scopes={[]}
-        sdk={sdk}
+        account={account}
         cookieData="Test"
       />
     );
@@ -230,7 +233,7 @@ test('Calls the passed success callback if the url meets the requirements and th
         authenticating={true}
         provider="facebook"
         scopes={[]}
-        sdk={sdk}
+        account={account}
         onSuccess={successCallback}
         onFailure={failureCallback}
       />
@@ -262,7 +265,7 @@ test('Calls the passed failure callback if the url meets the requirements but th
         authenticating={true}
         provider="facebook"
         scopes={[]}
-        sdk={sdk}
+        account={account}
         onSuccess={successCallback}
         onFailure={failureCallback}
       />
@@ -297,7 +300,7 @@ test('Calls the passed failure callback if the url meets the requirements but th
         authenticating={true}
         provider="facebook"
         scopes={[]}
-        sdk={sdk}
+        account={account}
         onSuccess={successCallback}
         onFailure={failureCallback}
       />
@@ -329,7 +332,7 @@ test('Does not call any of the passed callbacks if the url does not meet the req
         authenticating={true}
         provider="facebook"
         scopes={[]}
-        sdk={sdk}
+        account={account}
         onSuccess={successCallback}
         onFailure={failureCallback}
       />
@@ -361,7 +364,7 @@ test('Does not call any of the passed callbacks if the cookie is not set properl
         authenticating={true}
         provider="facebook"
         scopes={[]}
-        sdk={sdk}
+        account={account}
         onSuccess={successCallback}
         onFailure={failureCallback}
       />
