@@ -75,9 +75,9 @@
     "typescript": "^4.8.3"
   },
   "peerDependencies": {
-    "@react-native-cookies/cookies": "^6.2.1",
+    "@react-native-cookies/cookies": "*",
     "appwrite": "*",
-    "react-native-webview": "^11.26.0"
+    "react-native-webview": "*"
   },
   "jest": {
     "preset": "react-native",
