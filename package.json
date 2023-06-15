@@ -76,9 +76,7 @@
   },
   "peerDependencies": {
     "@react-native-cookies/cookies": "^6.2.1",
-    "appwrite": "^10.1.0",
-    "react": "18.1.0",
-    "react-native": "0.70.6",
+    "appwrite": "*",
     "react-native-webview": "^11.26.0"
   },
   "jest": {
